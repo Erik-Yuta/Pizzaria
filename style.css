@@ -1,0 +1,206 @@
+:root {
+    --cor-bg-principal: #ffffff;
+    --cor-texto: #2c3e50;
+    --padding: 20px;
+    --cor-btn: #ff7043;
+    --cor-btn-hover: #752d16;
+    --margem-secao: 40px;
+    --radius: 10px;
+    --sombra: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --cor-header-footer: #ff7043;
+    --cor-header-footer-texto: #ffffff;
+    --cor-secao-pagamento: #2c3e50;
+    --cor-secao-pagamento-texto: #ffffff;
+    --cor-secao-monte: #ffab40;
+    --cor-secao-monte-texto: #ffffff;
+    --cor-secao-pizzas: #8e44ad;
+    --cor-secao-pizzas-texto: #ffffff;
+    --cor-secao-pizzas-item: #f1c40f;
+    --cor-secao-sugestoes: #00796b;
+    --cor-secao-sugestoes-texto: #ffffff;
+    --cor-secao-sugestoes-form: #b2dfdb;
+    --cor-footer: #bf360c;
+}
+
+/* Layout base */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--cor-bg-principal);
+    color: var(--cor-texto);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header, main, footer {
+    padding: var(--padding) 0;
+    width: 100%;
+}
+
+header {
+    background-color: var(--cor-header-footer);
+    color: var(--cor-header-footer-texto);
+    text-align: center;
+    padding: var(--padding) 0;
+    margin-bottom: var(--margem-secao);
+    box-shadow: var(--sombra);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: var(--cor-header-footer-texto);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--cor-btn-hover);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--padding) 20px;
+}
+
+/* Estilos de seções */
+section {
+    background-color: var(--cor-bg-principal);
+    box-shadow: var(--sombra);
+    border-radius: var(--radius);
+    padding: var(--padding);
+    margin-bottom: var(--margem-secao);
+    width: 100%;
+    max-width: 800px;
+    transition: transform 0.3s;
+}
+
+section:hover {
+    transform: translateY(-3px);
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+
+#pizzas-disponiveis {
+    background-color: var(--cor-secao-pizzas);
+    color: var(--cor-secao-pizzas-texto);
+}
+
+#pizzas-disponiveis ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#pizzas-disponiveis ul li {
+    background-color: var(--cor-secao-pizzas-item);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: var(--radius);
+    color: var(--cor-texto);
+}
+
+#monte-sua-pizza {
+    background-color: var(--cor-secao-monte);
+    color: var(--cor-secao-monte-texto);
+}
+
+#raio-entrega {
+    background-color: var(--cor-secao-monte);
+    color: var(--cor-secao-monte-texto);
+}
+
+#pagamento {
+    background-color: var(--cor-secao-pagamento);
+    color: var(--cor-secao-pagamento-texto);
+}
+
+.btn-monte-pizza {
+    display: inline-block;
+    background-color: var(--cor-btn);
+    color: white;
+    padding: 15px 30px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+}
+
+.btn-monte-pizza:hover {
+    background-color: var(--cor-btn-hover);
+    transform: translateY(-2px);
+}
+
+#sugestoes {
+    background-color: var(--cor-secao-sugestoes);
+    color: var(--cor-secao-sugestoes-texto);
+}
+
+#sugestoes form {
+    background-color: var(--cor-secao-sugestoes-form);
+    padding: var(--padding);
+    border-radius: var(--radius);
+    box-shadow: var(--sombra);
+}
+
+#sugestoes label, #sugestoes textarea, #sugestoes input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+#sugestoes textarea {
+    resize: none;
+}
+
+footer {
+    background-color: var(--cor-footer);
+    color: var(--cor-header-footer-texto);
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: var(--sombra);
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #pizzas-disponiveis ul li, #sugestoes label, #sugestoes textarea, #sugestoes input {
+        font-size: 14px;
+    }
+
+    #pagamento, #sugestoes {
+        margin: var(--padding) 0;
+    }
+}
